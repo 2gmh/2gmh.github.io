@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generador de resultados aleatorios</title>
+</head>
+<body>
+	<p id="resultado"></p>
+	<script>
+		var lista = ["Elemento 1", "Elemento 2", "Elemento 3", "Elemento 4", "Elemento 5"];
+		var indice = Math.floor(Math.random() * lista.length);
+		document.getElementById("resultado").innerHTML = lista[indice];
+	</script>
+</body>
+</html>
