@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    background: #000000;
+    color: #FFFFFF;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    opacity: 0;
+    animation: fadeInBody 1s forwards;
+}
+
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInHeader 1s forwards 0.5s;
+}
+
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 1s forwards;
+}
+
+section:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+section:nth-child(2) {
+    animation-delay: 1s;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-media-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeInButtons 1s forwards 1.5s;
+}
+
+@keyframes fadeInButtons {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-media-buttons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.social-media-buttons button:hover {
+    transform: scale(1.1);
+}
+
+.social-media-buttons .github {
+    background-image: url('https://cdn.discordapp.com/attachments/1297987902055252032/1308890405995286700/image.png?ex=673f96ae&is=673e452e&hm=9bb6240c9056e274d279a15c75ba68592015eb37806ad6c5724b8cb48f4ab76c&');
+}
+
+.social-media-buttons .youtube {
+    background-image: url('https://cdn.discordapp.com/attachments/1297987902055252032/1308892823336124487/image.png?ex=673f98ef&is=673e476f&hm=9e5c8e17aa3bdcd46b71ebf4ba551b907fb23fc9da1334a2876d22cae5b2b357&');
+}
+
+.social-media-buttons .kick {
+    background-image: url('https://cdn.discordapp.com/attachments/1297987902055252032/1308894854226645043/image.png?ex=673f9ad3&is=673e4953&hm=283bf459d458fb743e9af1634b46181cec4a3f80831865873415fc8af79c552d&');
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    opacity: 0;
+    animation: fadeInFooter 1s forwards 2s;
+}
+
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
