@@ -456,6 +456,11 @@
             box-shadow: 0 4px 16px rgba(0,0,0,0.3);
             animation: comboPopIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             z-index: 250;
+            pointer-events: none;
+        }
+        
+        .combo-indicator.fade-out {
+            animation: comboFadeOut 0.5s ease-out forwards;
         }
         
         @keyframes comboPopIn {
@@ -466,6 +471,17 @@
             100% {
                 opacity: 1;
                 transform: translateX(-50%) scale(1);
+            }
+        }
+        
+        @keyframes comboFadeOut {
+            0% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) scale(0.8) translateY(-20px);
             }
         }
         
@@ -938,6 +954,14 @@
                 this.indicator.textContent = '✨ ¡Combo Secreto! ✨';
                 levelArea.appendChild(this.indicator);
                 
+                // Animar salida después de 1.5 segundos
+                setTimeout(() => {
+                    if (this.indicator) {
+                        this.indicator.classList.add('fade-out');
+                    }
+                }, 1500);
+                
+                // Remover del DOM después de que termine la animación
                 setTimeout(() => {
                     if (this.indicator) {
                         this.indicator.remove();
